@@ -42,6 +42,6 @@ func createTracker(name string, logger log.Logger) ([]Tracker, error) {
 	case "disputeChecker":
 		return []Tracker{NewDisputeChecker(logger, 0)}, nil
 	default:
-		return nil, errors.Errorf("no tracker with the name %s", name)
+		return nil, errors.Wrapf(err, "no tracker with the name %s", name)
 	}
 }

@@ -124,7 +124,7 @@ func StringToLevel(level string) (LogLevel, error) {
 		}
 
 	}
-	return 0, errors.Errorf("Invalid level name: %s", level)
+	return 0, errors.wrapf(err, "level name: %s", level)
 }
 
 func xlateLevel(level LogLevel) logrus.Level {
